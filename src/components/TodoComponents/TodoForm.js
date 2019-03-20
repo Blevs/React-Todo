@@ -5,6 +5,7 @@ const TodoForm = ({handleInputChange, value, handleAdd, handleClear}) => {
     return <form className="todo-form" onSubmit={handleAdd}>
              <input type="text"
                     placeholder="todo"
+                    name="inputValue"
                     onChange={handleInputChange}
                     value={value} />
              <div className="todo-form-buttons">

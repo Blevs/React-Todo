@@ -21,7 +21,7 @@ class App extends React.Component {
         return Date.now();
     };
     handleInputChange = (event) => {
-        this.setState({ inputValue: event.target.value });
+        this.setState({ [event.target.name]: event.target.value });
     };
     handleAdd = (event) => {
         event.preventDefault();
