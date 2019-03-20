@@ -42,6 +42,11 @@
     padding: 50px 0;
     border-bottom: 2px solid lightgrey;
 }
+@media (max-width: 500px) {
+    .todo h2 {
+        padding: 20px 0;
+    }
+}
 
 .todo .todo-body .todo-list {
     display: flex;
@@ -109,7 +114,7 @@
     }
 }
 
-.todo .todo-body form input {
+.todo .todo-body input {
     min-width: 0;
     width: 100%;
     padding: 20px;
@@ -119,14 +124,18 @@
     box-sizing: border-box;
 }
 
-.todo .todo-body form input:hover {
+.todo .todo-body input:hover {
     border-color: var(--sky);
     box-shadow: 0 0 1px var(--sky);
 }
 
-.todo .todo-body form input:focus {
+.todo .todo-body input:focus {
     border-color: var(--rain);
     box-shadow: 0 0 2px var(--rain);
+}
+
+.todo .todo-body input.todo-filter {
+    margin-bottom: 10px;
 }
 
 .todo .todo-body form .todo-form-buttons {

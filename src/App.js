@@ -1,5 +1,5 @@
 import React from 'react';
-import { TodoList, TodoForm } from './components/TodoComponents';
+import { TodoList, TodoForm, TodoFilter } from './components/TodoComponents';
 import './App.css';
 
 class App extends React.Component {
@@ -8,7 +8,9 @@ class App extends React.Component {
         this.localStorageKey = 'todo-state';
         this.state = JSON.parse(window.localStorage.getItem(this.localStorageKey))
             || { todos: [],
-                 inputValue: "" };
+                 inputValue: "",
+                 filterValue: ""
+               };
     }
     componentDidMount() {
         // handle refresh and leave
@@ -51,8 +53,11 @@ class App extends React.Component {
                           value={this.state.inputValue}
                           handleAdd={this.handleAdd}
                           handleClear={this.handleClear} />
+                <TodoFilter handleInputChange={this.handleInputChange}
+                            value={this.state.filterValue} />
                 <TodoList toggleCompleted={this.toggleCompleted}
-                          todos={this.state.todos} />
+                          todos={this.state.todos}
+                          filter={this.state.filterValue} />
               </div>
             </div>
         );
