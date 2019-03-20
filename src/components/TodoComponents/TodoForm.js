@@ -7,8 +7,10 @@ const TodoForm = ({handleInputChange, value, handleAdd, handleClear}) => {
                     placeholder="todo"
                     onChange={handleInputChange}
                     value={value} />
-             <button type="submit" className="todo-add">Add Todo</button>
-             <button className="todo-clear" onClick={handleClear}>Clear Completed</button>
+             <div className="todo-form-buttons">
+               <button type="submit" className="todo-add">add</button>
+               <button className="todo-clear" onClick={handleClear}>clean</button>
+             </div>
            </form>;
 };
 

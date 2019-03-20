@@ -1,5 +1,6 @@
 import React from 'react';
 import { TodoList, TodoForm } from './components/TodoComponents';
+import './App.css';
 
 const testTodos = [
     {
@@ -53,13 +54,15 @@ class App extends React.Component {
     render() {
         return (
             <div className="todo">
-              <h2>Todo List</h2>
-              <TodoList toggleCompleted={this.toggleCompleted}
-                        todos={this.state.todos} />
-              <TodoForm handleInputChange={this.handleInputChange}
-                        value={this.state.inputValue}
-                        handleAdd={this.handleAdd}
-                        handleClear={this.handleClear} />
+              <h2>todo</h2>
+              <div className="todo-body">
+                <TodoForm handleInputChange={this.handleInputChange}
+                          value={this.state.inputValue}
+                          handleAdd={this.handleAdd}
+                          handleClear={this.handleClear} />
+                <TodoList toggleCompleted={this.toggleCompleted}
+                          todos={this.state.todos} />
+              </div>
             </div>
         );
     }
