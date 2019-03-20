@@ -42,16 +42,18 @@ class App extends React.Component {
     handleClear = () => {
         this.setState({ todos: this.state.todos.filter(todo => !todo.completed) });
     };
-    handleCompletion = (id, completed) => {
+    toggleCompleted = (id) => {
         this.setState({
-            todos: this.state.todos.map(todo => (todo.id === id ? {...todo, completed} : todo))
+            todos: this.state.todos.map(todo => (todo.id === id
+                                                 ? {...todo, completed: !todo.completed}
+                                                 : todo))
         });
     };
     render() {
         return (
             <div>
               <h2>Todo List</h2>
-              <TodoList handleCompletion={this.handleCompletion}
+              <TodoList toggleCompleted={this.toggleCompleted}
                         todos={this.state.todos} />
               <TodoForm handleInputChange={this.handleInputChange}
                         value={this.state.inputValue}
