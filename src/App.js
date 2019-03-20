@@ -2,29 +2,20 @@ import React from 'react';
 import { TodoList, TodoForm } from './components/TodoComponents';
 import './App.css';
 
-const testTodos = [
-    {
-        task: 'Organize Garage',
-        id: 1528817077286,
-        completed: false
-    },
-    {
-        task: 'Bake Cookies',
-        id: 1528817084358,
-        completed: false
-    },
-    {
-        task: 'Make Breakfast',
-        id: 1528817084359,
-        completed: true
-    }
-];
-
 class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { todos: testTodos,
-                       inputValue: "" };
+        this.localStorageKey = 'todo-state';
+        this.state = JSON.parse(window.localStorage.getItem(this.localStorageKey))
+            || { todos: [],
+                 inputValue: "" };
+    }
+    componentDidMount() {
+        // handle refresh and leave
+        window.addEventListener(
+            "beforeunload",
+            () => window.localStorage.setItem(this.localStorageKey, JSON.stringify(this.state))
+        );
     }
     newId = () => {
         return Date.now();
