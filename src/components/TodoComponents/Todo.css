@@ -10,6 +10,7 @@
     --teal: #506869;
     --tension: #789090;
     --rosy: #D17878;
+    --overcast: #A3A3A3;
     --plumy: #965959;
     --vapor: #9ABBBB;
     background-color: var(--stainless);
@@ -20,6 +21,7 @@
     width: 100%;
     color: var(--gunmetal);
     padding: 0;
+    font-family: 'Roboto Condensed', Helvetica, Arial, sans-serif;
 }
 
 .todo .todo-body {
@@ -31,7 +33,7 @@
 }
 
 .todo h2 {
-    font-family: 'Lato';
+    font-family: 'Lato', Helvetica, Arial, sans-serif;
     text-align: center;
     font-weight: black;
     font-style: italic;
@@ -67,7 +69,6 @@
     transition: padding 0.3s, opacity 0.3s, box-shadow 0.5s;
     position: relative;
     opacity: 1;
-    font-family: 'Roboto Condensed', Helvetica, Arial, sans-serif;
 }
 
 .todo .todo-body .todo-list .todo-item:hover, 
@@ -204,4 +205,11 @@
     .todo .todo-body form .todo-form-buttons button:first-of-type {
         margin: 0;
     }
+}
+
+.todo .todo-body .todo-empty {
+    text-align: center;
+    color: var(--overcast);
+    font-size: 2.0rem;
+    margin-top: 40px;
 }
