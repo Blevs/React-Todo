@@ -23,13 +23,10 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = { todos: testTodos,
-                       inputValue: "",
-                       todoID: 0
-                     };
+                       inputValue: "" };
     }
     newId = () => {
-        this.setState({todoID: this.state.todoID + 1});
-        return this.state.todoId;
+        return Date.now();
     };
     handleInputChange = (event) => {
         this.setState({ inputValue: event.target.value });
