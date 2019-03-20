@@ -32,7 +32,7 @@ class App extends React.Component {
         this.setState({ inputValue: event.target.value });
     };
     handleAdd = () => {
-        if (!this.state.inputValue.match(/^\s+$/)) {
+        if (!this.state.inputValue.match(/^\s*$/)) {
             this.setState({ todos: this.state.todos.concat({ task: this.state.inputValue,
                                                              completed: false,
                                                              id: this.newId() }),
