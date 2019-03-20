@@ -31,7 +31,8 @@ class App extends React.Component {
     handleInputChange = (event) => {
         this.setState({ inputValue: event.target.value });
     };
-    handleAdd = () => {
+    handleAdd = (event) => {
+        event.preventDefault();
         if (!this.state.inputValue.match(/^\s*$/)) {
             this.setState({ todos: this.state.todos.concat({ task: this.state.inputValue,
                                                              completed: false,

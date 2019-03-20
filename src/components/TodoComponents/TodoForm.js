@@ -2,14 +2,14 @@ import React from 'react';
 import './Todo.css';
 
 const TodoForm = ({handleInputChange, value, handleAdd, handleClear}) => {
-    return <div className="todo-form">
+    return <form className="todo-form" onSubmit={handleAdd}>
              <input type="text"
                     placeholder="todo"
                     onChange={handleInputChange}
                     value={value} />
-             <button className="todo-add" onClick={handleAdd}>Add Todo</button>
+             <button type="submit" className="todo-add">Add Todo</button>
              <button className="todo-clear" onClick={handleClear}>Clear Completed</button>
-           </div>;
+           </form>;
 };
 
 export default TodoForm;
