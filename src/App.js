@@ -32,10 +32,12 @@ class App extends React.Component {
         this.setState({ inputValue: event.target.value });
     };
     handleAdd = () => {
-        this.setState({ todos: this.state.todos.concat({ task: this.state.inputValue,
-                                                        completed: false,
-                                                        id: this.newId() }),
-                       inputValue: "" });
+        if (!this.state.inputValue.match(/^\s+$/)) {
+            this.setState({ todos: this.state.todos.concat({ task: this.state.inputValue,
+                                                             completed: false,
+                                                             id: this.newId() }),
+                            inputValue: "" });
+        }
     };
     handleClear = () => {
         this.setState({ todos: this.state.todos.filter(todo => !todo.completed) });
